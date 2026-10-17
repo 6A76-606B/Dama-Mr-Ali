@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>امتحانات الوحدة الأولى</title>
+<style>
+:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#0b0d1a;--card:rgba(24,28,52,.85);--tx:#eef1ff;--mu:#9aa3c7;--pr:#8b5cf6;--pk:#ec4899;--cy:#22d3ee;--ok:#34d399;--bad:#fb7185;--bd:rgba(139,92,246,.28)}
+*{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;color:var(--tx);font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.8;min-height:100vh;
+background:radial-gradient(900px 500px at 90% -10%,rgba(139,92,246,.35),transparent),radial-gradient(700px 500px at -10% 30%,rgba(34,211,238,.18),transparent),radial-gradient(800px 600px at 60% 110%,rgba(236,72,153,.22),transparent),var(--bg);background-attachment:fixed}
+.wrap{max-width:1100px;margin:auto;padding:16px;display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:800px){.wrap{grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start}}
+.card{min-width:0;overflow-wrap:anywhere;background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--bd);border-radius:20px;padding:18px;box-shadow:0 10px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.06)}
+h1{margin:0 0 12px;font-size:21px;line-height:1.5;background:linear-gradient(90deg,var(--cy),var(--pr),var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
+input[type=text],select{width:100%;padding:12px 14px;border:1px solid var(--bd);border-radius:14px;background:rgba(255,255,255,.05);color:var(--tx);font:inherit;outline:0;transition:.2s}
+input[type=text]:focus,select:focus{border-color:var(--cy);box-shadow:0 0 0 3px rgba(34,211,238,.2)}
+select{margin-top:12px}select option{background:#14172b;color:var(--tx)}
+.tabs{display:flex;gap:8px;margin:12px 0}.tabs button{flex:1;--c:var(--pr)}
+.tabs button:nth-child(1){--c:#38bdf8}.tabs button:nth-child(2){--c:#fb923c}.tabs button:nth-child(3){--c:#34d399}
+button{font:inherit;font-weight:700;border:0;border-radius:14px;padding:12px 14px;color:#fff;cursor:pointer;width:100%;background:linear-gradient(135deg,var(--pr),var(--pk));box-shadow:0 6px 18px rgba(139,92,246,.35);transition:transform .15s,box-shadow .15s,opacity .15s}
+button:active{transform:scale(.97)}
+button.sec{background:transparent;color:var(--c,var(--cy));border:1.5px solid var(--c,var(--cy));box-shadow:none}
+.tabs button.on{background:var(--c);color:#0b0d1a;border-color:var(--c);box-shadow:0 6px 20px color-mix(in srgb,var(--c) 50%,transparent)}
+button:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
+.q{margin:12px 0;padding-top:10px}.q p{margin:0 0 10px;font-weight:700;font-size:18px}
+label{display:block;padding:12px 14px;border:1.5px solid var(--bd);border-radius:14px;margin:8px 0;cursor:pointer;background:rgba(255,255,255,.03);transition:.18s}
+label:hover{border-color:var(--cy);background:rgba(34,211,238,.08)}
+label input{accent-color:var(--pk);margin-left:6px}
+label.sel{border-color:var(--pk);background:linear-gradient(135deg,rgba(139,92,246,.25),rgba(236,72,153,.2));box-shadow:0 0 18px rgba(236,72,153,.25)}
+.bar{height:8px;background:rgba(255,255,255,.08);border-radius:8px;margin:8px 0;overflow:hidden}
+.bar div{height:100%;background:linear-gradient(90deg,var(--cy),var(--pr),var(--pk));border-radius:8px;transition:width .3s}
+.nav{display:flex;gap:10px;margin-top:16px}.nav button{flex:1}
+.big{font-size:30px;font-weight:800;text-align:center;margin:10px 0;background:linear-gradient(90deg,var(--ok),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+.row2{display:flex;justify-content:space-between;color:var(--mu);font-size:14px}
+.rv{margin:10px 0;padding:12px;border:1px solid var(--bd);border-radius:14px;font-size:14px;background:rgba(255,255,255,.03)}.rv .g{color:var(--ok)}.rv .r{color:var(--bad)}
+.tbl{overflow-x:auto;border-radius:12px;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:linear-gradient(135deg,rgba(139,92,246,.4),rgba(236,72,153,.3));padding:9px 8px;text-align:right;white-space:nowrap;position:sticky;top:0}
+td{padding:8px;border-bottom:1px solid var(--bd);text-align:right;white-space:nowrap}tr:nth-child(even) td{background:rgba(255,255,255,.03)}
+.msg{color:var(--mu);font-size:14px;margin-top:8px}
+label.ok{border-color:var(--ok);background:rgba(52,211,153,.2);box-shadow:0 0 18px rgba(52,211,153,.3)}
+label.bad{border-color:var(--bad);background:rgba(251,113,133,.2);box-shadow:0 0 18px rgba(251,113,133,.3)}
+.score{display:flex;justify-content:space-between;font-weight:700;margin:8px 0 4px}.score .g{color:var(--ok)}.score .r{color:var(--bad)}
+.rbar{display:flex;height:14px;border-radius:14px;background:rgba(255,255,255,.1);overflow:hidden;margin-bottom:6px}
+.gr{background:linear-gradient(90deg,#10b981,#34d399);transition:width .4s}.rd{background:linear-gradient(90deg,#fb7185,#ef4444);transition:width .4s}
+</style></head><body>
+<div class="wrap">
+<div class="card"><h1>🧪 امتحانات الوحدة الأولى: التفاعلات الكيميائية وآثارها البيئية</h1>
+<input type="text" id="name" placeholder="اكتب اسمك" maxlength="40">
+<div class="tabs" id="tabs"></div>
+<div id="stage"><div class="msg">اكتب اسمك واختار الامتحان للبدء.</div></div><div class="msg" id="note"></div></div>
+<div class="card"><button class="sec" id="tg">📊 كل الدرجات</button>
+<div id="board" hidden><select id="fl"><option value="0">كل الامتحانات</option><option value="1">امتحان 1</option><option value="2">امتحان 2</option><option value="3">امتحان 3</option></select><div class="tbl"><table><thead><tr><th>#</th><th>الاسم</th><th>الامتحان</th><th>المحاولة</th><th>الدرجة</th><th>النسبة</th><th>المدة</th><th>التاريخ والوقت</th></tr></thead><tbody id="rows"></tbody></table></div><div class="msg" id="empty" hidden>لسه محدش سلّم.</div></div></div>
+</div>
+<script>
+// السطر: السؤال|الإجابة الصحيحة|خطأ|خطأ|خطأ (الترتيب بيتخلط تلقائي)
+const D=[`
+تفاعل الماغنسيوم مع الأكسجين لتكوين MgO هو تفاعل|اتحاد مباشر|انحلال|إحلال بسيط|إحلال مزدوج
+تسخين أكسيد الزئبق الأحمر ينتج زئبقًا وغاز|الأكسجين|الهيدروجين|النيتروجين|ثاني أكسيد الكربون
+انحلال كربونات الكالسيوم بالتسخين ينتج CaO وغاز|ثاني أكسيد الكربون|الأكسجين|الهيدروجين|أول أكسيد الكربون
+أنشط الفلزات التالية كيميائيًا|الصوديوم|النحاس|الحديد|الفضة
+فلز لا يتفاعل مع حمض HCl المخفف|النحاس|الخارصين|الماغنسيوم|الحديد
+الغاز المتصاعد من تفاعل الماغنسيوم مع HCl المخفف|الهيدروجين|الأكسجين|ثاني أكسيد الكربون|الكلور
+ناتج احتراق شريط الماغنسيوم مسحوق لونه|أبيض|أسود|أحمر|أزرق
+تتكون على سطح سلك النحاس المسخن طبقة سوداء من|CuO|CuS|CuCl₂|Cu(OH)₂
+يُحفظ فلز الصوديوم في|الكيروسين|الماء|حمض مخفف|محلول ملحي
+تفاعل الصوديوم مع الماء ينتج|NaOH وغاز H₂|NaCl وغاز O₂|Na₂O وغاز H₂|NaH وغاز O₂
+عند غمر الخارصين في محلول كبريتات النحاس يترسب|النحاس الأحمر|الفضة|الحديد|الرصاص
+لون محلول كبريتات النحاس|أزرق|أحمر|أخضر|عديم اللون
+تفاعل HCl مع NaOH يسمى|تفاعل التعادل|اتحاد مباشر|انحلال|إحلال بسيط
+لون دليل اليونيفرسال عند نقطة التعادل|أخضر|أحمر|بنفسجي|أصفر
+لون اليونيفرسال في محلول NaOH|بنفسجي|أحمر|أخضر|برتقالي
+الغاز الناتج من تفاعل Na₂CO₃ مع HCl|ثاني أكسيد الكربون|الهيدروجين|الأكسجين|الكلور
+لون راسب AgCl|أبيض|أزرق|أسود|أحمر
+الراسب الناتج من AgNO₃ مع NaCl|AgCl|NaNO₃|Ag|AgNO₃
+تفاعلات الترسيب من أنواع|الإحلال المزدوج|الإحلال البسيط|الانحلال|الاتحاد المباشر
+الأكسدة هي عملية|فقد الإلكترونات|اكتساب الإلكترونات|نقص الكتلة|زيادة الهيدروجين
+العامل المختزل مادة|تفقد إلكترونات|تكتسب إلكترونات|لا تتغير|تترسب دائمًا
+العامل المؤكسد في تفاعل Zn مع CuSO₄|CuSO₄|Zn|ZnSO₄|Cu
+يتأكسد الخارصين لأنه|يفقد إلكترونين|يكتسب إلكترونين|يترسب|يتبخر
+لا يتفاعل الألومنيوم فورًا مع HCl بسبب طبقة|Al₂O₃|AlCl₃|Al(OH)₃|AlN
+عدد الإلكترونات التي تفقدها ذرة الخارصين|2|1|3|4
+الماغنسيوم مع الماء البارد|لا يتفاعل إلا مع الساخن|يتفاعل فورًا|لا يتفاعل أبدًا|ينفجر
+الماغنسيوم أنشط من|الحديد|الصوديوم|البوتاسيوم|الكالسيوم
+تنظيف الفضة يتم بقطعة من|الألومنيوم|النحاس|الذهب|البلاتين
+فلز يسبق الهيدروجين في المتسلسلة|الرصاص|الفضة|النحاس|الذهب
+التفاعل A + BC → AC + B هو|إحلال بسيط|إحلال مزدوج|اتحاد مباشر|انحلال`,`
+عناصر مثلث الاحتراق|وقود وأكسجين وحرارة|وقود وماء وضوء|أكسجين وماء وحرارة|وقود ونيتروجين وحرارة
+درجة الاشتعال هي|أقل درجة حرارة لبدء الاشتعال|أعلى درجة حرارة للمادة|درجة غليان المادة|درجة انصهار المادة
+الورق المبلل يتأخر اشتعاله لأن الماء|يمتص الحرارة|يزيد الأكسجين|ينتج وقودًا|يمنع الضوء
+المواد القابلة للاشتعال كالبنزين توصف بأنها|ملتهبة|خاملة|متعادلة|حمضية
+يحتوي رأس عود الثقاب على عامل مؤكسد هو|كلورات البوتاسيوم|كلوريد الصوديوم|كربونات الكالسيوم|نترات الفضة
+الفوسفور الأحمر يوجد في|جانب علبة الثقاب|رأس العود|ورق العلبة|خشب العود
+احتراق الفلزات ينتج أكاسيد|قاعدية|حمضية|متعادلة|غازية
+احتراق معظم اللافلزات ينتج أكاسيد|حمضية|قاعدية|متعادلة|لا ينتج
+أكسيد لافلزي مذاب في الماء يحول دوار الشمس إلى|الأحمر|الأزرق|الأخضر|لا يتغير
+احتراق الكربون في الهواء ينتج|CO₂|H₂|SO₂|NO
+اللهب الأزرق في موقد بنزن يدل على احتراق|تام|غير تام|لا يوجد احتراق|ناقص الحرارة
+اللهب الأصفر يترك على الأنبوبة|سناجًا أسود|ماءً فقط|أكسجينًا|هيدروجينًا
+الغاز الطبيعي يتكون أساسًا من|الميثان|الإيثان|البيوتان|الأكسجين
+غاز البوتاجاز يتكون معظمه من|البروبان والبيوتان|الميثان|الهيدروجين|الأمونيا
+الاحتراق التام للميثان ينتج|CO₂ وبخار ماء|CO وبخار ماء|C وبخار ماء|CO₂ وH₂
+الاحتراق غير التام قد ينتج غاز|CO|CO₂ فقط|O₂|N₂
+الطاقة الناتجة من الاحتراق غير التام|أقل|أكبر|مساوية|معدومة
+يكشف عن بخار الماء ورق|كلوريد الكوبلت اللامائي|ماء الجير|دوار الشمس|اليونيفرسال
+يتعكر ماء الجير بغاز|ثاني أكسيد الكربون|أول أكسيد الكربون|بخار الماء|الأكسجين
+يتحول كلوريد الكوبلت الأزرق في وجود الماء إلى|الوردي|الأخضر|الأصفر|الأحمر
+غاز CO₂ يتميز بأنه|لا يشتعل ولا يساعد على الاشتعال|أخف من الهواء|بني اللون|يشتعل بفرقعة
+غاز CO|سام عديم اللون والرائحة|بني اللون|نفاذ الرائحة|غير ضار
+غاز SO₂ مع الماء يكوّن حمض|الكبريتوز|الكربونيك|النيتريك|الهيدروكلوريك
+لون غاز NO₂|بني محمر|أزرق|عديم اللون|أصفر باهت
+تنتج السحابة السوداء من حرق|قش الأرز|الغاز الطبيعي|الأشعة|الماء
+المحول الحفزي يحوّل CO إلى|CO₂|C|SO₂|H₂S
+أجهزة غسل الغازات الحمضية تعتمد على تفاعلات|التعادل|الترسيب|الانحلال|الاتحاد
+أقل أنواع الوقود تلويثًا|الغاز الطبيعي|الفحم الحجري|المازوت|الخشب
+في تفاعلات الاحتراق كتلة النواتج|تساوي كتلة المتفاعلات|أكبر منها|أقل منها|لا علاقة لها بها
+عدد جزيئات O₂ اللازمة لاحتراق جزيء ميثان تامًا|2|1|3|4`,`
+المادة المسببة للإدمان في التبغ|النيكوتين|القطران|أول أكسيد الكربون|الأمونيا
+النيكوتين مركب عضوي طبيعي تأثيره|قلوي|حمضي|متعادل|ملحي
+يحتوي النيكوتين على عناصر|C وH وN|C وH وS|C وO فقط|Na وCl
+القطران هو|سائل لزج|غاز سام|مادة صلبة|ملح
+الغاز السام الذي يرتبط بالهيموجلوبين|أول أكسيد الكربون|ثاني أكسيد الكربون|النيتروجين|الهيدروجين
+غاز سام ينتج من احتراق التبغ|سيانيد الهيدروجين|الهيليوم|النيون|الأرجون
+غازات مهيجة للتنفس في الدخان|أكاسيد النيتروجين والأمونيا|الهيليوم|بخار الماء|الأكسجين
+معادن ثقيلة سامة في التبغ|الكادميوم والرصاص|الصوديوم والبوتاسيوم|الكالسيوم والماغنسيوم|الذهب والفضة
+عنصر مشع موجود في التبغ|البولونيوم|الكادميوم|الرصاص|الزرنيخ
+تراكم العناصر المشعة يتلف|DNA في خلايا الرئة|الجلد فقط|العظام|الأظافر
+لون الرماد الأبيض سببه|معادن غير متطايرة|القطران|النيكوتين|أول أكسيد الكربون
+يتسبب التبغ في وفاة أكثر من|8 ملايين سنويًا|8 آلاف سنويًا|80 ألفًا سنويًا|800 ألف سنويًا
+مرض النفاخ الرئوي سببه تمزق|الحويصلات الهوائية|عضلة القلب|الكلى|المعدة
+لون رئة المدخن|داكن|وردي|أخضر|أصفر
+مع التدخين تقل|سعة الرئة|إفراز القطران|ضربات القلب|ضغط الدم
+النيكوتين يزيد|ضغط الدم وضربات القلب|الأكسجين في الدم|المناعة|الخصوبة
+من أضرار التدخين على الجهاز الدوري|تصلب الشرايين|زيادة المناعة|تحسن التنفس|قلة السعال
+قد يسبب النيكوتين|اضطراب النوم|تحسن الرؤية|هدوءًا دائمًا|زيادة الذاكرة
+أثر التدخين على الخصوبة|يقللها|يزيدها|لا يؤثر|يحسنها
+يضعف التدخين|جهاز المناعة|الرؤية فقط|الأظافر فقط|الوزن فقط
+التدخين السلبي هو|استنشاق غير المدخن للدخان|التدخين المباشر|السيجارة الإلكترونية|ترك التدخين
+دخان طرف السيجارة المشتعلة يحتوي|تركيزات أعلى من السموم|تركيزات أقل|لا سموم|ماء فقط
+التدخين الإلكتروني يعتمد على|تسخين سائل به نيكوتين|حرق أوراق التبغ|حرق الورق|بخار الماء فقط
+الاعتقاد بأن الإلكتروني أقل ضررًا|خاطئ فكلاهما ضار|صحيح تمامًا|آمن للقلب|لا يسبب إدمانًا
+أعقاب السجائر تلوث|التربة والمياه|الفضاء فقط|لا شيء|طبقة الأوزون فقط
+التدخين يساهم في|الاحتباس الحراري|زيادة برودة الأرض|نقص CO₂|تنقية الهواء
+من طرق الوقاية من التدخين|الرفض الواعي|التجربة مرة واحدة|التدخين الإلكتروني|المجاملة
+نتجنب أماكن التدخين لحماية أنفسنا من|التدخين السلبي|الإدمان الوراثي|الحرارة|الضوضاء
+اختصار منظمة الصحة العالمية|WHO|UN|FAO|NASA
+في التدخين المباشر المدخن|يُدخل الدخان إلى رئتيه عمدًا|لا يستنشق|يقف بجوار مدخن|لا يتعرض للنيكوتين`];
+const $=id=>document.getElementById(id);
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const E=D.map(t=>t.trim().split("\n").map(l=>{const p=l.split("|");return{q:p[0],a:p[1],o:sh(p.slice(1))}}));
+// ضع هنا رابط Firebase Realtime Database لو عايز درجات مشتركة بين كل الأجهزة، مثال: "https://اسم-مشروعك-default-rtdb.firebaseio.com"
+const FB_URL="";
+let uid=localStorage.getItem("uid");if(!uid){uid=Math.random().toString(36).slice(2);localStorage.setItem("uid",uid)}
+const store={
+async save(k,v){if(FB_URL){await fetch(`${FB_URL}/results/${k}.json`,{method:"PUT",body:JSON.stringify(v)})}else{const a=JSON.parse(localStorage.getItem("results")||"{}");a[k]=v;localStorage.setItem("results",JSON.stringify(a))}},
+async all(){let o;if(FB_URL){o=await (await fetch(`${FB_URL}/results.json`)).json()}else{o=JSON.parse(localStorage.getItem("results")||"{}")}return Object.values(o||{})}};
+if(!FB_URL)$("note").textContent=" DAMA & Mr Ali";
+let cur=-1,i=0,A=[],t0=0,tick=null,timer=null;
+const fmt=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`;
+$("tabs").innerHTML=E.map((_,k)=>`<button class="sec" data-i="${k}">امتحان ${k+1}</button>`).join("");
+$("tabs").onclick=e=>{const k=e.target.dataset.i;if(k!==undefined)start(+k)};
+function start(n){if(!$("name").value.trim()){alert("اكتب اسمك الأول");return}
+if(cur>=0&&A.length&&A.some(x=>x!==null)&&!done&&!confirm("هتبدأ امتحان جديد وتفقد تقدمك الحالي. متأكد؟"))return;
+cur=n;i=0;done=false;A=Array(E[n].length).fill(null);t0=Date.now();clearInterval(tick);
+tick=setInterval(()=>{const t=$("tm");if(t)t.textContent="⏱ "+fmt((Date.now()-t0)/1000|0)},1000);
+document.querySelectorAll("#tabs button").forEach((b,k)=>b.className=k==n?"on":"sec");render()}
+let done=false;
+function stats(){let c=0,w=0;E[cur].forEach((q,k)=>{if(A[k]!==null){q.o[A[k]]===q.a?c++:w++}});return[c,w]}
+function render(){const q=E[cur][i],n=E[cur].length,[c,w]=stats(),t=c+w,p=t?Math.round(c/t*100):0,ans=A[i]!==null;
+$("stage").innerHTML=`<div class="row2"><span>سؤال ${i+1} من ${n}</span><span id="tm">⏱ ${fmt((Date.now()-t0)/1000|0)}</span></div>
+<div class="score"><span class="g">✅ صح: ${c}</span><span class="r">❌ غلط: ${w}</span></div>
+<div class="rbar">${t?`<div class="gr" style="width:${p}%"></div><div class="rd" style="width:${100-p}%"></div>`:""}</div>
+<div class="q"><p>${q.q}</p>${q.o.map((o,j)=>{let cl="";if(ans){if(o===q.a)cl="ok";else if(j===A[i])cl="bad"}return `<label class="${cl}"><input type="radio" name="o" data-j="${j}" ${A[i]===j?"checked":""} ${ans?"disabled":""}> ${o}</label>`}).join("")}</div>
+<div class="nav"><button class="sec" id="pv" ${i==0?"disabled":""}>◀ السابق</button><button id="nx" ${!ans?"disabled":""}>${i==n-1?"تسليم ✔":"التالي ▶"}</button></div>`}
+$("stage").onchange=e=>{if(e.target.name!=="o"||A[i]!==null)return;A[i]=+e.target.dataset.j;render()};
+$("stage").onclick=e=>{const b=e.target.closest("button");if(!b||b.disabled)return;
+if(b.id==="pv"){i--;render()}else if(b.id==="nx"){if(i==E[cur].length-1)finish();else{i++;render()}}else if(b.id==="again")start(cur)};
+async function finish(){clearInterval(tick);done=true;const end=Date.now(),secs=Math.round((end-t0)/1000),Q=E[cur],n=Q.length;
+let s=0,rv="";Q.forEach((q,k)=>{if(q.o[A[k]]===q.a)s++;else rv+=`<div class="rv">${k+1}. ${q.q}<br>إجابتك: <b class="r">${q.o[A[k]]}</b><br>الصحيحة: <b class="g">${q.a}</b></div>`});
+let att=1;try{att=(await store.all()).filter(r=>r.uid===uid&&r.exam===cur+1).length+1}catch(e){}
+const pct=Math.round(s/n*100);
+$("stage").innerHTML=`<div class="big">${s} / ${n} (${pct}%)</div><div class="row2"><span>الامتحان ${cur+1} - المحاولة ${att}</span><span>المدة ${fmt(secs)}</span></div><button id="again" style="margin:12px 0">محاولة جديدة</button>${rv?"<b>الأسئلة اللي غلطت فيها:</b>"+rv:"<div class='big'>🏆 ممتاز! كل الإجابات صح</div>"}`;
+try{await store.save(uid+"_"+cur+"_"+end,{uid,name:$("name").value.trim(),exam:cur+1,attempt:att,score:s,total:n,pct,secs,start:t0,end})}catch(e){$("note").textContent="الدرجة ظهرت لك بس ماتسجلتش."}
+if(!$("board").hidden)draw()}
+async function draw(){try{const f=+$("fl").value;const l=(await store.all()).filter(r=>!f||r.exam===f).sort((x,y)=>x.exam-y.exam||y.score-x.score||x.secs-y.secs);
+$("empty").hidden=l.length>0;const tb=$("rows");tb.textContent="";
+l.forEach((r,k)=>{const tr=document.createElement("tr");[k+1,r.name,"امتحان "+r.exam,r.attempt,`${r.score}/${r.total}`,r.pct+"%",fmt(r.secs),new Date(r.end).toLocaleString("ar-EG")].forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td)});tb.appendChild(tr)})}catch(e){$("empty").hidden=false;$("empty").textContent="تعذّر تحميل الدرجات."}}
+$("fl").onchange=draw;
+$("tg").onclick=()=>{const b=$("board");b.hidden=!b.hidden;clearInterval(timer);if(!b.hidden){draw();timer=setInterval(draw,5000)}};
+</script></body></html>
